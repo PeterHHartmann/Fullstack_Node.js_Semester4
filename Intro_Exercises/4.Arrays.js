@@ -15,9 +15,21 @@ const friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push("Friend 1");
-friends.push("Friend 2");
-friends.push("Friend 3");
+friends.push({
+    name: "Peter",
+    age: 25
+});
+
+friends.push({
+    name: "John",
+    age: 66
+});
+
+friends.push({
+    name: "Anne",
+    age: 45
+});
+
 console.log(friends);
 
 // --------------------------------------
@@ -64,7 +76,7 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
-for(let i = 0; i < lettersExpanded.length; i+2){
+for(let i = 1; i < lettersExpanded.length; i = i + 2){
     console.log(lettersExpanded[i]);
 }
 
