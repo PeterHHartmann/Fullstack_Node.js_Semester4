@@ -6,39 +6,29 @@ app.get("/", (req, res) => {
 });
 
 app.get("/time", (req, res) => {
-    const getTime = (date) => {
-        return {
-            hours: date.getHours(),
-            minutes: date.getMinutes(),
-            seconds: date.getSeconds(),
-            milliseconds: date.getMilliseconds(), 
-        }
-    }
-    res.send(getTime(new Date()));
+    const date = new Date();
+    res.send({
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        seconds: date.getSeconds(),
+        milliseconds: date.getMilliseconds(), 
+    });
 });
 
 app.get("/day", (req, res) => {
-    const getDay = (date) => {
-        const day = date.getDay();
-        const daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        return {
-            day: day,
-            dayOfWeek: daysOfWeek[day]
-        }
-    }
-    res.send(getDay(new Date()));
+    const date = new Date();
+    res.send({
+        day: date.getDate(),
+        dayOfWeek: date.toString().split(" ")[0],
+    });
 });
 
 app.get("/month", (req, res) => {
-    const getMonth = (date) => {
-        const month = date.getMonth();
-        const monthsOfYear = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        return {
-            month: month, 
-            monthOfYear: monthsOfYear[month]
-        }
-    }
-    res.send(getMonth(new Date()));
+    const date = new Date();
+    res.send({
+        month: date.getMonth(), 
+        monthOfYear: date.toString().split(" ")[1],
+    });
 });
 
-app.listen(8080);
+app.listen(8080, () => console.log("listening on http://localhost:8080/"));;
