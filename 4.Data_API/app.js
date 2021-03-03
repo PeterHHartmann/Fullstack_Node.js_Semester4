@@ -31,7 +31,6 @@ app.get("/basket/:id", (req, res) => {
 app.post("/basket", (req, res) => {
     basket = {...basket, ...req.body};
     res.send(basket);
-    
 });
 
 app.post("/basket/:id", (req, res) => {
