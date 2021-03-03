@@ -31,4 +31,12 @@ app.get("/month", (req, res) => {
     });
 });
 
-app.listen(8080, () => console.log("listening on http://localhost:8080/"));;
+app.get("/about", (req, res) => {
+    res.send({version: "1.0.1"});
+});
+
+app.get("/page", (req, res) => {
+    res.send("<h1>Welcome</h1>");
+});
+
+app.listen(8080, () => console.log("listening on http://localhost:8080/"));
