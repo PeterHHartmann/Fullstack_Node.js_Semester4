@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <title>NPM</title>
+</head>
+<body style="background-color: #8d8fa1;">
+    <div class="container">
+        <div class="card" style="background-color: #c5c8db;">
+            <div class="card-body">
+            <h2 class="card-title">NPM (Node Package Manager)</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5>What is it?</h5>
+                <p>NPM is a registry for open-source code packages</p>
+                <p>You can look up all packages <a href="https://www.npmjs.com/">here </a></p>
+                <p>The NPM CLI or Command Line Client is installed along with your installation of Node</p>
+                <p>You can test if NPM is installed using the command:</p>
+                <p>
+                    <code style="margin-left: 5%;">npm --version</code>
+                </p>
+                <p>To start installing NPM package on your Node.js project simply create a file called:</p>
+                <p>
+                    <code style="margin-left: 5%;">package.json</code>
+                </p>
+                <p>NPM uses this file to store information about your project package, such as dependencies.
+                    <br>
+                    This is a JSON file which means that it contains attribute-value pairs.
+                </p>
+                <p>
+                    A the interior of a typical package.json would look something like this:
+                </p>
+                <p style="margin-left: 5%;">
+                    <code>{
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        "dependencies": {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            "express": "^4.17.1"
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        }
+                        <br>
+                    }<br>
+                    </code>
+                </p>
+                <p>Here the "dependencies" contains attribute-value pairs that describe which NPM packages the project is using and which version.
+                    <br>
+                    in this case: the project uses the NPM package "express"
+                </p>
+                <p>You can also skip creating your own package.json file and let NPM do it for you, with the command:</p>
+                <p>
+                    <code style="margin-left: 5%;">npm install express</code>
+                </p>
+                <p>The usage of a package.json file means that you wont have to add your dependencies when you push your project with git
+                    <br>
+                    which saves your project from becoming bloated.
+                </p>
+            </div>
+        </div>
+            <div style="display: flex; justify-content: space-evenly;">
+                <a href="javascript:history.back()">
+                    <button type="button" class="btn btn-warning">
+                        Previous
+                    </button>
+                </a>
+                <a href="/nodemon">
+                    <button type="button" class="btn btn-info">
+                        Nodemon
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
