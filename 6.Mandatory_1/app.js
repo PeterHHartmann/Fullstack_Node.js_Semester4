@@ -27,4 +27,12 @@ app.get("/express_guide", (req, res) => {
     res.sendFile(__dirname + "/public/express_guide/express_guide.html");
 });
 
+app.get("/rest_api", (req, res) => {
+    res.sendFile(__dirname + "/public/rest_api/rest_api.html");
+});
+
+app.get("/serving_html", (req, res) => {
+    res.sendFile(__dirname + "/public/serving_html/serving_html.html");
+});
+
 app.listen(8080, () => console.log("listening on http://localhost:8080/"));

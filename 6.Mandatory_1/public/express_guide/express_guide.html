@@ -27,16 +27,22 @@
                     <code style="margin-left: 5%;">const app = express()</code>
                 </p>
                 <p>The require function is built into Node as a way of including modules that exist in seperate files, like an express installation (which can be found in the node_modules folder in your project)</p>
-
+                <p>In order for express to start the webserver you need to have this function call at the bottom of your file</p>
+                <p>
+                    <code style="margin-left: 5%;">app.listen(8080)</code>
+                </p>
+                <p>The number giving as an argument to the function is the port which you want express to listen on</p>
+                <p>You might notice that if you go to http://localhost:8080 after starting the server, that there wont be anything showing</p>
+                <p>REST API and serving HTML files will be explained in the next chapter</p>
                 <div style="display: flex; justify-content: space-evenly;">
-                    <a href="javascript:history.back()">
+                    <a href="/nodemon">
                         <button type="button" class="btn btn-warning">
                             Previous
                         </button>
                     </a>
-                    <a href="/express">
+                    <a href="/rest_api">
                         <button type="button" class="btn btn-info">
-                            Next
+                            REST API
                         </button>
                     </a>
                 </div>
