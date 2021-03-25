@@ -26,6 +26,10 @@ app.get("/pub", (req, res) => {
     }
 });
 
+app.get("/catfact", (req, res) =>{
+    res.sendFile(__dirname + "/public/catfact.html");
+});
+
 app.listen(port, (error) => {
     if(error){
         console.log(error);
