@@ -12,11 +12,108 @@
         <div class="card" style="background-color: #c5c8db;">
             <div class="card-body">
                 <h2 class="card-title">REST API</h2>
-                
             </div>
         </div>
         <div class="card">
             <div class="card-body">
+                <h3>What is a REST API</h3>
+                <p>A restful API describes common behavior for what how resources are requested by the client and how the server responds</p>
+                <p>In this example i will talk about a REST API which handles users.</p>
+                <p>each of express' api functions require a url path and a callback function as an argument.
+                    <br>the callback uses the request from the client and the response to send back.
+                </p>
+                <h5>GET</h5>
+                <p>Your API will have 2 endpoints</p>
+                <p>/users endpoint which is used for retrieving all users from the server</p>
+                <p style="margin-left: 5%;">
+                    <code>
+                        app.get("/users", (req, res) => {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            res.send({data: users});
+                            <br>
+                        });
+                    </code>
+                </p>
+                <p>/users/id endpoint which is used for retrieving a specific user from the server</p>
+                <p style="margin-left: 5%;">
+                    <code>
+                        app.get("/users/:id", (req, res) => {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            const id = Number(req.params.id);
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            const foundUser = users.find(e => e.id === id);
+                            <br>
+                        });
+                    </code>
+                </p>
+                <p>Here we use req.params.id to extract the id parameter from the url and find the requested user based on that</p>
+
+                <h5>POST</h5>
+                <p>A post endpoint in your API will usually only have 1 endpoint </p>
+                <p>/users endpoint for the purpose of creating a new user</p>
+                <p style="margin-left: 5%;">
+                    <code>
+                        let AUTOINCREMENT = users.length;
+                        <br>
+                        <br>
+                        app.post("/users", (req, res) => {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            const newUser = req.body;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            newUser.id = ++AUTOINCREMENT;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            users.push(newUser);
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            res.send({ data: user});
+                            <br>
+                        });
+                    </code>
+                </p>
+
+                <h5>PATCH</h5>
+                <p>Your API will likely only contain 1 endpoint</p>
+                <p>/users/id endpoint for updating/changing a user</p>
+                <p style="margin-left: 5%;">
+                    <code>
+                        app.patch("/users/:id", (req, res) => {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            users = users.map(user => {
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                if(user.id === Number(req.params.id)){
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    user = {...user, ...req.body, id: user.id};
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                }
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                return user;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            });
+                            <br>&nbsp;&nbsp;
+                            res.send({});
+                            <br>
+                        });
+                    </code>
+                </p>
+
+                <h5>DELETE</h5>
+                <p>Your API will most likely only contain 1 endpoint (you don't wan't client to be able to request the deletion of all resources)</p>
+                <p>/users/id endpoint for deleting a single specific user</p>
+                <p style="margin-left: 5%;">
+                    <code>
+                        app.delete("/users/:id", (req, res) => {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            const query = Number(req.params.id);
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            users = users.filter(user => user.id !== query);
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            res.send({ });
+                            <br>
+                        });
+                    </code>
+                </p>
+
+                <p>Next up: i will show you how to server HTML files with express</p>
+
                 <div style="display: flex; justify-content: space-evenly;">
                     <a href="/express_guide">
                         <button type="button" class="btn btn-warning">
