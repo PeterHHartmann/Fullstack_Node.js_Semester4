@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
-
+const fetch = require('node-fetch');
 const port = process.env.PORT || 8080;
 
-const fetch = require('node-fetch');
 app.get("/proxy", (req, res) => {
     fetch('https://google.com/')
         .then(response => response.text())
