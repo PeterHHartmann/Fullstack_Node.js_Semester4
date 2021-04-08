@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 app.get("/proxy", (req, res) => {
     fetch('https://google.com/')
-        .then(response => response.text())
-        .then(text => res.send(text));
+        .then(res => res.textConverted())
+        .then(body => res.send(body));
 });
 
-app.listen(port, (error) => {
+app.listen(PORT, (error) => {
     if(error){
         console.log(error);
     } else {
-        console.log("listening on http://localhost:" + port + "/");
+        console.log("Server is running on port " + PORT);
     }
 });
