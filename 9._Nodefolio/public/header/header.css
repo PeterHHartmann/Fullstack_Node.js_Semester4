@@ -1,3 +1,34 @@
+body {
+    background-color: rgb(144, 197, 63);
+    margin: 0px;
+}
+
 main {
-    min-height: calc(100vh - 120px)
+    display: grid;
+    min-height: calc(100vh - 6.5rem);
+    justify-content: center;
+}
+
+header {
+    background-color: rgb(70, 72, 61);
+    border-radius: 0px 0px 25px 0px;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(1rem, 1fr));
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.nav-item {
+    padding: 1rem ;
+}
+
+a .nav-item {
+    color: #bacc9e;
 }

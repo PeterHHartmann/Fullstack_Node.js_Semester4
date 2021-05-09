@@ -1,4 +1,10 @@
-#footer-copyright {
-    display: flex;
+footer {
+    background-color: rgb(70, 72, 61);
+    padding: 1rem;
+}
+
+.footer-copyright {
+    display: grid;
     justify-content: center;
+    color: #bacc9e;
 }
