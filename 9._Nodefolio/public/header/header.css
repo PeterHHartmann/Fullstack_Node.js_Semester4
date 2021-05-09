@@ -32,3 +32,17 @@ nav a {
 a .nav-item {
     color: #bacc9e;
 }
+
+.list-item {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.list-item li a {
+    text-decoration: none;
+    color: rgb(43, 44, 37);
+}
+
+p {
+    font-size: 1.2rem;
+}
